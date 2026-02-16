@@ -15,12 +15,16 @@ java {
         languageVersion = JavaLanguageVersion.of(17)
     }
 }
+application {
+    mainClass = 'my.spring.boot.project.App'
+}
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    implementation localGroovy()
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter'
