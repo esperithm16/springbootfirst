@@ -1,38 +1,27 @@
 plugins {
     id 'groovy'
-    id 'org.springframework.boot' version '2.6.4'
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'org.springframework.boot' version '3.2.5'
+    id 'io.spring.dependency-management' version '1.1.4'
     id 'application'
 }
 
-
 group = 'my.spring.boot'
 version = '0.0.1-SNAPSHOT'
-description = 'my-spring-boot-project-1'
 
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(17)
     }
 }
-application {
-    mainClass = 'my.spring.boot.project.App'
-}
 
 repositories {
-    mavenCentral()
+    mavenCentral()   // ⭐ VERY IMPORTANT (you missed this)
 }
 
 dependencies {
-    implementation localGroovy()
-
-    implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.codehaus.groovy:groovy:3.0.21'
 
+    // ⭐ REQUIRED FOR App.groovy
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-}
-
-
-tasks.named('test') {
-    useJUnitPlatform()
 }
