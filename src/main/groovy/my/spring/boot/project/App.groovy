@@ -10,6 +10,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext
 @SpringBootApplication
 class App {
     static void main(String[] args) {
+
+        UserConfig user = new UserConfig();
+        user.setName("John Doe");   // 👈 IMPORTANT
+
         SpringApplication.run(App, args)
     }
 }
